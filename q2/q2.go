@@ -11,8 +11,37 @@ package q2
 //indica o contrário.
 //
 //Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
+package main
+
+import "fmt"
 
 func ProblemsSolved(answers [][3]bool) int {
-	// Seu código aqui
+	certeza := [][]bool{
+		{true, true, false},
+		{true, false, true},
+		{true, true, true},
+		{false, false, true},
+	}
+
+	conta := 2
+	for i := 0; i < len(certeza); i++ {
+		sum := 0
+
+		for j := 0; j < len(certeza[i]); j++ {
+			if certeza[i][j] {
+				sum++
+			}
+
+		}
+
+		if sum >= 2 {
+			conta++
+
+		}
+
+	}
+	fmt.Println("\n", conta)
+
+}
 	return 0
 }
