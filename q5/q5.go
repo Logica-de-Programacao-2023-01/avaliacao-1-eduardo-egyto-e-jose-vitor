@@ -15,14 +15,14 @@ package q5
 //Ajude Pedro a lidar com esta tarefa fácil.
 
 func ProcessString(s string) string {
-		x := strings.Split("")
+	x := strings.Split(s, "")
 	i := 0
 	for i < len(x) {
 		x[i] = strings.ToLower(x[i])
 		i++
 	}
 
-	consoantes := []strings{}
+	consoantes := []string{}
 	vogais := "aeiou"
 	for _, j := range x {
 		if !strings.ContainsAny(j, vogais) && j != "." {
@@ -33,13 +33,11 @@ func ProcessString(s string) string {
 	i = 0
 	ponto := ""
 	for i < len(consoantes) {
-		if i >=0 {
+		if i >= 0 {
 			ponto += "."
 		}
 		ponto += consoantes[i]
 		i++
 	}
 	return ponto
-}
-
 }
