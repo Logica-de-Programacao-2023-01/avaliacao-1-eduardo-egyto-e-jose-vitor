@@ -15,6 +15,31 @@ package q5
 //Ajude Pedro a lidar com esta tarefa fácil.
 
 func ProcessString(s string) string {
-	// Seu código aqui
-	return ""
+		x := strings.Split("")
+	i := 0
+	for i < len(x) {
+		x[i] = strings.ToLower(x[i])
+		i++
+	}
+
+	consoantes := []strings{}
+	vogais := "aeiou"
+	for _, j := range x {
+		if !strings.ContainsAny(j, vogais) && j != "." {
+			consoantes = append(consoantes, j)
+		}
+	}
+
+	i = 0
+	ponto := ""
+	for i < len(consoantes) {
+		if i >=0 {
+			ponto += "."
+		}
+		ponto += consoantes[i]
+		i++
+	}
+	return ponto
+}
+
 }
