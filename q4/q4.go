@@ -1,4 +1,5 @@
 package q4
+import "fmt"
 
 //Uma loja virtual de roupas recebeu várias listas de produtos vendidos em diferentes dias da semana. O dono da loja
 //deseja analisar as listas para entender melhor o comportamento de suas vendas. Para isso, ele precisa classificar cada
@@ -10,6 +11,29 @@ package q4
 //Caso a lista possua apenas um elemento, a função deve retornar 3.
 
 func ClassifyPrices(prices []int) (int, error) {
-	// Seu código aqui
-	return 0, nil
+	if len(prices) == 0 {
+		return 0, fmt.Errorf("erro")
+	}
+
+	if len(prices) == 1 {
+		return 3, nil
+	}
+	var crescente bool = true
+	var decrescente bool = true
+	for i := 1; i < len(prices); i++ {
+		if prices[i] < prices[i-1] {
+			crescente = false
+		} else if prices[i] > prices[i-1] {
+			decrescente = false
+		}
+	}
+	if crescente == true {
+		return 1, nil
+	} else if decrescente == true {
+		return 2, nil
+	} else {
+		return 3, nil
+	}
+
 }
+
