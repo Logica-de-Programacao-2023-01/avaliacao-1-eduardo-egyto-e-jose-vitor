@@ -13,6 +13,7 @@ func ClassifyPrices(prices []int) (int, error) {
 	if len(prices) == 0 {
 		return 0, fmt.Errorf("erro")
 	}
+
 	if len(prices) == 1 {
 		return 3, nil
 	}
@@ -27,12 +28,11 @@ func ClassifyPrices(prices []int) (int, error) {
 	}
 	if crescente == true {
 		return 1, nil
-	}
-	else if decrescente == true {
+	} else if decrescente == true {
 		return 2, nil
-	}
-	else {
+	} else {
 		return 3, nil
 	}
+
 }
 
